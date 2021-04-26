@@ -1,5 +1,9 @@
 def trapping_rain(buildings):
 # 코드를 작성하세요
+    left_max = -1
+
+    for height in buildings:
+
 
 # 테스트
 print(trapping_rain([3, 0, 0, 2, 0, 4]))
