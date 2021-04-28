@@ -20,7 +20,6 @@ def merge(list1, list2):
 
     return merged_list
 
-
 # 테스트
 print(merge([1],[]))
 print(merge([],[1]))
