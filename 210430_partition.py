@@ -12,8 +12,16 @@ def partition(my_list, start, end):
     i = b = start
     if i == end:
         swap_elements(my_list, b, i)
-        return my_list
-    
+    else:
+        if my_list[end] < my_list[i]:
+            i += 1
+        else:
+            swap_elements(my_list, b, i)
+            i += 1
+            b += 1
+    return my_list
+
+
 
 
 
