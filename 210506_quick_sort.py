@@ -33,24 +33,18 @@ def partition(my_list, start, end):
 # 퀵 정렬
 def quicksort(my_list, start, end):
     # 코드를 작성하세요.
-    i = start
-    b = start
-    p = end
+    if end - start < 1:
+        return
 
-    # 범위안의 모든 값들을 볼 때까지 반복문을 돌린다
-    while i < p:
-        # i 인덱스의 값이 기준점보다 작으면 i와 b 인덱스에 있는 값들을 교환하고 b를 1 증가 시킨다
-        if my_list[i] <= my_list[p]:
-            swap_elements(my_list, i, b)
-            b += 1
-        i += 1
+    # my_list를 두 부분으로 나누어주고,
+    # partition 이후 pivot의 인덱스를 리턴받는다
+    pivot = partition(my_list, start, end)
 
-    # b와 기준점인 p 인덱스에 있는 값들을 바꿔준다
-    swap_elements(my_list, b, p)
-    p = b
+    # pivot의 왼쪽 부분 정렬
+    quicksort(my_list, start, pivot - 1)
 
-    # pivot의 최종 인덱스를 리턴해 준다
-    return my_list
+    # pivot의 오른쪽 부분 정렬
+    quicksort(my_list, pivot + 1, end)
 
 
 # 테스트 1
